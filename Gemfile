@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-gem "zendesk_api"
+gem "zendesk_api", ">= 2"
+
 gem "pry"
 gem "pry-nav"
 gem "pry-stack_explorer"
