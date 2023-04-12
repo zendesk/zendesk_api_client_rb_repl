@@ -12,6 +12,9 @@ GEM
       multipart-post (~> 2)
     faraday-net_http (3.0.2)
     hashie (5.0.0)
+    http-2-next (0.5.1)
+    httpx (0.22.5)
+      http-2-next (>= 0.4.1)
     inflection (1.0.0)
     method_source (1.0.0)
     mini_mime (1.1.2)
@@ -41,6 +44,7 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
+  httpx
   pry
   pry-doc
   pry-nav

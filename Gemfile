@@ -6,3 +6,5 @@ gem "pry"
 gem "pry-nav"
 gem "pry-stack_explorer"
 gem "pry-doc"
+
+gem "httpx"

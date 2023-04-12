@@ -7,10 +7,16 @@ Pry.commands.alias_command 'c', 'continue'
 Pry.commands.alias_command 's', 'step'
 Pry.commands.alias_command 'n', 'next'
 
+require 'httpx'
+require 'httpx/adapters/faraday'
+
 require 'zendesk_api'
 
 # You won't need to namespace every resource inside the REPL
 module ZendeskAPI
+  class Client
+    GZIP_EXCEPTIONS = [:httpx]
+  end
   # Short for map_ids - A table with ID and the eval'd code you pass
   # Example: mids(client.users.fetch!, :email, :created_at) # [[id, email, created_at]]
   # More helpers at https://gist.github.com/ecoologic/66939216c9b2443ae643d6d114b53fcc
@@ -25,6 +31,7 @@ module ZendeskAPI
     config.url = "https://#{ENV['ZENDESK_API_CLIENT_RB_SUBDOMAIN']}.zendesk.com/api/v2"
     config.username = ENV['ZENDESK_API_CLIENT_RB_USERNAME']
     config.password = ENV['ZENDESK_API_CLIENT_RB_PASSWORD']
+    config.adapter = :httpx
   end
   current_email = client.current_user.email
   client.config.logger.level = :debug
