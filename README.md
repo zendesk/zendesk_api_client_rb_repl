@@ -42,4 +42,4 @@ And this is your REPL, have fun!
 
 See [LICENSE](./LICENSE).
 
-Copyright 2022 Zendesk.
+Copyright 2024 Zendesk.
